@@ -37,6 +37,10 @@ addpath(genpath('../streamgen/display'));
 
 % ---- initialize seed
 
+C = constants('seed');
+seed = C.SEED;
+rng(seed);
+
 warning off
 
 if ~exist('configIn') || isempty(configIn)
@@ -45,8 +49,8 @@ if ~exist('configIn') || isempty(configIn)
 end
 config = initializeDefaultValues(configIn);
 
-seed = config.seed;
-rng(seed);
+if
+
 
 
 % ---- nDataPoints

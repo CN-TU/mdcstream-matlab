@@ -1,5 +1,5 @@
 addpath(genpath('src'));
-
+clear
 
 % p.scenarioName     = {'scenarioA' , 'scenarioB'};
 % p.nOfDataSets     = {2            , 2};
@@ -13,7 +13,8 @@ addpath(genpath('src'));
 % p.movingClusters  = {'no'         , 'few'};
 % p.overlap         = {'no'         , 'no'};
 
-p.scenarioName     = {'scenarioA' };
+p.seed = 14
+p.scenarioName    = {'scenarioA' };
 p.nOfDataSets     = {1            };
 
 p.dimensions      = {'two'        };

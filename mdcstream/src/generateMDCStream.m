@@ -67,6 +67,11 @@ for iScenario = 1 : size(p.scenarioName, 2)
        mkdir(configFolder); 
     end
     
+    
+    if isfield(p,'seed')
+        mdc.seed = p.seed;
+    end
+    
     mdc.dimensions        = p.dimensions{iScenario};
     mdc.stationary        = p.stationary{iScenario};
     mdc.outliers          = p.outliers{iScenario};

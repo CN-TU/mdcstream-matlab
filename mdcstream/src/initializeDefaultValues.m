@@ -29,6 +29,11 @@ function [config] = initializeDefaultValues(config)
 
 DEFAULT = constants('default');
 
+if ~isfield(config,'seed')
+    config.seed = DEFAULT.SEED;
+    warning('Using random seed = %s', DEFAULT.SEED);
+end
+
 if ~isfield(config,'dimensions')
     config.dimensions = DEFAULT.DIMENSIONS;
     warning('Using default value for dimensions = %s', DEFAULT.DIMENSIONS);

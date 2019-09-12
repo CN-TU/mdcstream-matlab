@@ -18,10 +18,7 @@
 function CONST = constants(select)
 
 switch select
-    case 'seed'
-        CONST.SEED = 14;
-        %CONST.SEED = RandStream.shuffleSeed;
-    
+  
     case 'nDataPoints' 
         CONST.MAX_NPOINTS = 10000;
         CONST.MIN_NPOINTS = 10000;
@@ -69,6 +66,7 @@ switch select
         
         
     case 'default'
+        CONST.SEED = RandStream.shuffleSeed;  
         CONST.DIMENSIONS = 'two';
         CONST.CLUSTERS = 'few';
         CONST.OUTLIERS = 'few';
@@ -78,6 +76,7 @@ switch select
         CONST.SPACE = 'tight';
         CONST.STATIONARY = 'stationary';
         CONST.MOVING_CLUSTERS = 'no'; 
+        
                
     otherwise
         error('constants:initializationError', 'Using wrong constant selector %s', select);
