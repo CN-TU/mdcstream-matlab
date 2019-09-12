@@ -1,19 +1,9 @@
-addpath(genpath('src'));
+
 clear
 
-% p.scenarioName     = {'scenarioA' , 'scenarioB'};
-% p.nOfDataSets     = {2            , 2};
-% 
-% p.dimensions      = {'two'        , 'two'};
-% p.stationary      = {'sequential' , 'stationary'};
-% p.outliers        = {'medium'     , 'many'}; 
-% p.clusters        = {'many'       , 'few'};
-% p.densityDiff     = {'two'        , 'no'};
-% p.space           = {'tight'      , 'tight'};
-% p.movingClusters  = {'no'         , 'few'};
-% p.overlap         = {'no'         , 'no'};
+addpath(genpath('src'));
 
-p.seed = 14
+p.seed = 14;
 p.scenarioName    = {'scenarioA' };
 p.nOfDataSets     = {1            };
 
@@ -29,5 +19,3 @@ p.overlap         = {'no'         };
 p.nDatapoints = 10000;
 
 generateMDCStream(p, 'dataRoot');
-%load("dataRoot/set/data/set_data_1.mat");
-%displayStatic(result);

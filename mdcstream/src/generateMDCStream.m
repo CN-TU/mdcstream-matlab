@@ -34,10 +34,6 @@ function generateMDCStream(p, rootFolder)
 
 warning('backtrace', 'off')
 
-if(~isdeployed)
-  cd(fileparts(which('msdgenExample.m')));
-end
-
 if(~exist('rootFolder'))
     rootFolder = 'msdData';
 end
