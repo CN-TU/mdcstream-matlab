@@ -1,6 +1,7 @@
 function [] = mdcstream_help()
 
 fprintf('--------------------- Configuration options ---------------------\n\n');
+fprintf('.seed:             A seed to replicate the data sets. If not configured mdcstream will use random seed.\n');
 fprintf('.scenarioName:     The name of the scenario                        \n');
 fprintf('.nOfDataSets:      Number of data sets per scenario   \n');
 fprintf("\n");
