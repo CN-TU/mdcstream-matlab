@@ -31,9 +31,9 @@ addpath(genpath('utilities'));
 addpath(genpath('../../mdcgen-matlab/config_build/src/'));
 addpath(genpath('../../mdcgen-matlab/mdcgen/src'));
 addpath(genpath('../../mdcgen-matlab/extra_tools'));
-addpath(genpath('../streamgen-matlab-master/config_build/src'));
-addpath(genpath('../streamgen-matlab-master/streamgen/src'));
-addpath(genpath('../streamgen-matlab-master/display'));
+addpath(genpath('../streamgen/config_build/src'));
+addpath(genpath('../streamgen/streamgen/src'));
+addpath(genpath('../streamgen/display'));
 
 % ---- initialize seed
 seed = RandStream.shuffleSeed;
