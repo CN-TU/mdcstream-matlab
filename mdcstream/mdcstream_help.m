@@ -1,4 +1,4 @@
-function [] = msd_help()
+function [] = mdcstream_help()
 
 fprintf('--------------------- Configuration options ---------------------\n\n');
 fprintf('.scenarioName:     The name of the scenario                        \n');
