@@ -18,6 +18,10 @@
 function CONST = constants(select)
 
 switch select
+    case 'seed'
+        CONST.SEED = 14;
+        %CONST.SEED = RandStream.shuffleSeed;
+    
     case 'nDataPoints' 
         CONST.MAX_NPOINTS = 10000;
         CONST.MIN_NPOINTS = 10000;

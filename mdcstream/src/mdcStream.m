@@ -36,7 +36,9 @@ addpath(genpath('../streamgen/streamgen/src'));
 addpath(genpath('../streamgen/display'));
 
 % ---- initialize seed
-seed = RandStream.shuffleSeed;
+
+C = constants('seed');
+seed = C.SEED;
 rng(seed);
 
 warning off
