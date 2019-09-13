@@ -39,6 +39,14 @@ if(~exist('rootFolder'))
 end
 mkdir(rootFolder); 
 
+
+if isfield(p,'seed')
+    mdc.seed = p.seed; 
+else
+    mdc.seed = RandStream.shuffleSeed;
+end
+rng(mdc.seed);
+
 for iScenario = 1 : size(p.scenarioName, 2)
     fprintf("Generating %d datasets for scenario: %s \n", p.nOfDataSets{iScenario}, p.scenarioName{iScenario});
     
@@ -62,12 +70,7 @@ for iScenario = 1 : size(p.scenarioName, 2)
     if(~exist(configFolder))
        mkdir(configFolder); 
     end
-    
-    
-    if isfield(p,'seed')
-        mdc.seed = p.seed;
-    end
-    
+
     mdc.dimensions        = p.dimensions{iScenario};
     mdc.stationary        = p.stationary{iScenario};
     mdc.outliers          = p.outliers{iScenario};
@@ -79,6 +82,10 @@ for iScenario = 1 : size(p.scenarioName, 2)
     save(strcat(scenarioFolder, "/", p.scenarioName{iScenario}, "_params", ".mat"), 'mdc');
     
     for jDataSet = 1 : p.nOfDataSets{iScenario}
+        
+        if isfield(mdc, 'seed')
+            mdc.seed = randi([1 100000000], 1, 1);
+        end
         
         [result, configuration] = mdcStream(mdc);
                 
