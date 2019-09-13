@@ -7,7 +7,7 @@ end
 
 clear
 
-resultsA = run(TestSuite.fromFolder('streamgen/test'));
+resultsA = run(TestSuite.fromFolder('mdcstream/test'));
 resultsB = run(TestSuite.fromFolder('config_build/test'));
 
 disp([resultsA, resultsB]);

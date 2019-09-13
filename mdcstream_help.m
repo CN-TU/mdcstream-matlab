@@ -1,11 +1,11 @@
-function [] = stream_help( input )
+function [] = mdcstream_help( input )
 
 if ~exist('input', 'var') || isempty(input)
   input = '';
 end
 
 addpath(genpath('config_build/src'));
-addpath(genpath('streamgen/src'));
+addpath(genpath('mdcstream/src'));
 addpath(genpath('display'));
 addpath(genpath('data_provider'));
 
@@ -18,14 +18,14 @@ switch input
         fprintf("warning('backtrace', 'off');                                       \n");
         fprintf("                                                                   \n");
         fprintf("addpath(genpath('config_build/src'));                              \n");
-        fprintf("addpath(genpath('streamgen/src'));                                 \n");
+        fprintf("addpath(genpath('mdcstream/src'));                                 \n");
         fprintf("addpath(genpath('display'));                                       \n");
         fprintf("addpath(genpath('data_provider'));                                 \n");
         fprintf("                                                                   \n");
         fprintf("config.displacement = 0.1;                                         \n");
         fprintf("config.displacementRate = 0.1;                                     \n");
         fprintf("data = dataProvider(1000, 2, 3, 3);                                \n");
-        fprintf("result = streamgen(data, config);                                  \n");
+        fprintf("result = mdcstream(data, config);                                  \n");
         fprintf("displayStream(result);                                             \n");
         fprintf('\n-------------------- configuration example end ------------------\n');
         fprintf("                                                                   \n");
@@ -82,7 +82,7 @@ switch input
         fprintf('\n%% Example on how to configure seed: \n\n');
         fprintf('config.seed = 18; \n');
         fprintf("data = dataProvider(1000, 2, 3, 3);                \n");
-        fprintf('[ result ] = streamgen(data, config );             \n\n');
+        fprintf('[ result ] = mdcstream(data, config );             \n\n');
     
     case 'tbsDistribution'
         fprintf('\tbsDistribution to select: \n\n');
@@ -99,7 +99,7 @@ switch input
         fprintf('%% tbsDistribution as array. Length has to match nClusters; \n');
         fprintf('config.tbsDistribution = [1 3 3 4]; \n\n');
         fprintf("data = dataProvider(1000, 2, 3, 3);                \n");         
-        fprintf('[ result ] = streamgen(data, config );             \n\n');
+        fprintf('[ result ] = mdcstream(data, config );             \n\n');
         
     case 'mu'
         fprintf('\n%% Example on how to configure mu: \n\n');
@@ -108,7 +108,7 @@ switch input
         fprintf('%% mu as array. Length has to match nClusters; \n');
         fprintf('config.mu = [6 2 3 6]; \n\n');
         fprintf("data = dataProvider(1000, 2, 3, 3);                \n");         
-        fprintf('[ result ] = streamgen(data, config );             \n\n');
+        fprintf('[ result ] = mdcstream(data, config );             \n\n');
         
     case 'sigma'
         fprintf('\n%% Example on how to configure sigma: \n\n');
@@ -117,25 +117,25 @@ switch input
         fprintf('%% sigma as array. Length has to match nClusters; \n');
         fprintf('config.sigma = [0.6 0.2 0.3 0.5]; \n\n');
         fprintf("data = dataProvider(1000, 2, 3, 3);                \n");         
-        fprintf('[ result ] = streamgen(data, config );             \n\n');
+        fprintf('[ result ] = mdcstream(data, config );             \n\n');
         
     case 'simultaneous'
         fprintf('\n%% Example on how to configure simultaneous: \n\n');
         fprintf('config.simultaneous = 0.5; \n\n');
         fprintf("data = dataProvider(1000, 2, 3, 3);                \n");         
-        fprintf('[ result ] = streamgen(data, config );             \n\n');
+        fprintf('[ result ] = mdcstream(data, config );             \n\n');
         
     case 'maxSimultaneous'
         fprintf('\n%% Example on how to configure maxSimultaneous: \n\n');
         fprintf('config.maxSimultaneous = 150; \n\n');
         fprintf("data = dataProvider(1000, 2, 3, 3);                \n");         
-        fprintf('[ result ] = streamgen(data, config );             \n\n');
+        fprintf('[ result ] = mdcstream(data, config );             \n\n');
         
     case 'stationary'
         fprintf('\n%% Example on how to configure stationary: \n\n');
         fprintf('config.stationary = 0; \n\n');
         fprintf("data = dataProvider(1000, 2, 3, 3);                \n");         
-        fprintf('[ result ] = streamgen(data, config );             \n\n');
+        fprintf('[ result ] = mdcstream(data, config );             \n\n');
 
     case 'startTime'
         fprintf('\n%% Example on how to configure startTime: \n\n');
@@ -145,19 +145,19 @@ switch input
         fprintf('%% startTime as array. Length has to match nClusters; \n');
         fprintf('config.startTime = [300 200 500 300]; \n\n');
         fprintf("data = dataProvider(1000, 2, 3, 3);                \n");         
-        fprintf('[ result ] = streamgen(data, config );             \n\n');
+        fprintf('[ result ] = mdcstream(data, config );             \n\n');
        
     case 'startAfterCluster'
         fprintf('\n%% Example on how to configure startAfterCluster: \n\n');
         fprintf('config.startAfterCluster = [0 3 1 1]; \n\n');
         fprintf("data = dataProvider(1000, 2, 3, 3);                \n");         
-        fprintf('[ result ] = streamgen(data, config );             \n\n');
+        fprintf('[ result ] = mdcstream(data, config );             \n\n');
                
     case 'nTimeSamples'
         fprintf('\n%% Example on how to configure nTimeSamples: \n\n');
         fprintf('config.nTimeSamples = 100000; \n\n');
         fprintf("data = dataProvider(1000, 2, 3, 3);                \n");         
-        fprintf('[ result ] = streamgen(data, config );             \n\n');
+        fprintf('[ result ] = mdcstream(data, config );             \n\n');
         
     case 'refillClusters'
         fprintf('\n%% Example on how to configure refillClusters: \n\n');
@@ -167,7 +167,7 @@ switch input
         fprintf('%% refillClusters as array. Length has to match nClusters; \n');
         fprintf('config.refillClusters = [0 1 1]; \n\n');
         fprintf("data = dataProvider(1000, 2, 3, 3);                \n");         
-        fprintf('[ result ] = streamgen(data, config );             \n\n');
+        fprintf('[ result ] = mdcstream(data, config );             \n\n');
         
     case 'displacement'
         fprintf('\n%% Example on how to configure displacement: \n\n');
@@ -177,7 +177,7 @@ switch input
         fprintf('%% displacement as array. Length has to match nClusters; \n');
         fprintf('config.refillClusters = [0.5 0.1 0.1]; \n\n');
         fprintf("data = dataProvider(1000, 2, 3, 3);                \n");
-        fprintf('[ result ] = streamgen(data, config );             \n\n');
+        fprintf('[ result ] = mdcstream(data, config );             \n\n');
         
     case 'displacementRate'
         fprintf('\nExample on how to configure displacementRate: \n\n');
@@ -187,7 +187,7 @@ switch input
         fprintf('%% displacementRate as array. Length has to match nClusters; \n');
         fprintf('config.displacementRate = [0.4 0.3 0.2]; \n');
         fprintf("data = dataProvider(1000, 2, 3, 3);                \n");         
-        fprintf('[ result ] = streamgen(data, config );             \n\n');
+        fprintf('[ result ] = mdcstream(data, config );             \n\n');
         
     case 'vectorChangeRate'
         fprintf('\nExample on how to configure vectorChangeRate: \n\n');
@@ -197,15 +197,15 @@ switch input
         fprintf('%% vectorChangeRate as array. Length has to match nClusters; \n');
         fprintf('config.vectorChangeRate = [0.1 0.1 0.3]; \n');
         fprintf("data = dataProvider(1000, 2, 3, 3);                \n");         
-        fprintf('[ result ] = streamgen(data, config );             \n\n');
+        fprintf('[ result ] = mdcstream(data, config );             \n\n');
         
     otherwise
         fprintf('-------------------------- Usage --------------------------\n\n');
         fprintf('\nUsage: >> stream_help [OPTION] \n\n');
         fprintf('Following values can be inserted for [OPTION]:  \n\n');
-        fprintf("example ... to display a basic hello world example for streamgen     \n");
+        fprintf("example ... to display a basic hello world example for mdcstream     \n");
         fprintf('input   ... to display all possible input config config     \n');
-        fprintf('outut   ... to display streamgen output config     \n\n');
+        fprintf('outut   ... to display mdcstream output config     \n\n');
         fprintf('To display examples for each configuration parameter enter for example:     \n');
         fprintf('>> stream_help tbsDistribution     \n');
         fprintf('This shows examples for configuration options for each field     \n');

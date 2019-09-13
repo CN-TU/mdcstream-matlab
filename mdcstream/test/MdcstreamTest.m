@@ -1,4 +1,4 @@
-classdef StreamgenTest < matlab.unittest.TestCase
+classdef MdcstreamTest < matlab.unittest.TestCase
 
         
     properties
@@ -47,7 +47,7 @@ classdef StreamgenTest < matlab.unittest.TestCase
             givenNDatapointsIsSetTo(10000, this);
             givenMuIsSetTo(0.5, this);
             givenSigmaIsSetTo(0.2, this);
-            whenStreamGenIsCalled(this);
+            whenMdcstreamIsCalled(this);
             thenStreamDataLabelDistributionPerClusterShouldBe(1 , this);
         end
         
@@ -57,7 +57,7 @@ classdef StreamgenTest < matlab.unittest.TestCase
             givenNDatapointsIsSetTo(100, this);
             givenMuIsSetTo(1, this);
             givenSigmaIsSetTo(0.0000002, this);
-            whenStreamGenIsCalled(this);
+            whenMdcstreamIsCalled(this);
             thenStreamDataLabelShouldBeConstant(this);
         end
         
@@ -68,7 +68,7 @@ classdef StreamgenTest < matlab.unittest.TestCase
             givenNDatapointsIsSetTo(10000, this);
             givenMuIsSetTo(2, this);
             givenSigmaIsSetTo(0.4, this);
-            whenStreamGenIsCalled(this);
+            whenMdcstreamIsCalled(this);
             thenStreamDataLabelDistributionPerClusterShouldBe(2 , this);
         end
         
@@ -79,7 +79,7 @@ classdef StreamgenTest < matlab.unittest.TestCase
             givenNDatapointsIsSetTo(50000, this);
             givenMuIsSetTo(7, this);
             givenSigmaIsSetTo(0.2, this);
-            whenStreamGenIsCalled(this);
+            whenMdcstreamIsCalled(this);
             thenStreamDataLabelDistributionPerClusterShouldBe(3 , this);
         end
         
@@ -90,7 +90,7 @@ classdef StreamgenTest < matlab.unittest.TestCase
             givenNDatapointsIsSetTo(50000, this);
             givenMuIsSetTo(2, this);
             givenSigmaIsSetTo(0.2, this);
-            whenStreamGenIsCalled(this);
+            whenMdcstreamIsCalled(this);
             thenStreamDataLabelDistributionPerClusterShouldBe(4 , this);
         end
         
@@ -101,7 +101,7 @@ classdef StreamgenTest < matlab.unittest.TestCase
             givenNDatapointsIsSetTo(50000, this);
             givenMuIsSetTo(3, this);
             givenSigmaIsSetTo(0.2, this);
-            whenStreamGenIsCalled(this);
+            whenMdcstreamIsCalled(this);
             thenStreamDataLabelDistributionPerClusterShouldBe(6 , this);
         end
         
@@ -111,7 +111,7 @@ classdef StreamgenTest < matlab.unittest.TestCase
             givenNDatapointsIsSetTo(5000, this);
             givenNTimeSamplesIsSetTo(10000, this);
             givenSimultaneousIsSetTo(0.1, this);
-            whenStreamGenIsCalled(this);
+            whenMdcstreamIsCalled(this);
             thenPercentageOfSimultaneousStreamDataLabelsShouldBe(0.1, this);
         end
         
@@ -121,7 +121,7 @@ classdef StreamgenTest < matlab.unittest.TestCase
             givenNDatapointsIsSetTo(50000, this);
             givenSimultaneousIsSetTo(0.5, this);
             givenMaxSimultaneousIsSetTo(3, this);
-            whenStreamGenIsCalled(this);
+            whenMdcstreamIsCalled(this);
             thenConsecutiveSimultaneousTimeSamplesShouldNotExceed(3, this);
         end
         
@@ -129,11 +129,11 @@ classdef StreamgenTest < matlab.unittest.TestCase
         function testReproduceDataSet(this)
             givenNDatapointsIsSetTo(100, this);
             givenSeedIsSetTo(18, this);
-            givenStreamGenIsCalled(this);
+            givenMdcstreamIsCalled(this);
             this.referenceResult = this.result;
             
             givenSeedIsSetTo(18, this);
-            whenStreamGenIsCalled(this);
+            whenMdcstreamIsCalled(this);
             thenOutputDatasetsAreEqual(this);
         end
         
@@ -145,7 +145,7 @@ classdef StreamgenTest < matlab.unittest.TestCase
             givenMuIsSetTo([2, 2, 3, 4], this);
             givenSigmaIsSetTo([0.2, 0.2, 0.2, 0.2], this);
             givenStationaryIsSetTo(0, this);
-            whenStreamGenIsCalled(this);
+            whenMdcstreamIsCalled(this);
             thenPercentageOfSimultaneousStreamDataLabelsShouldBeZero(this);
             thenStreamDataLabelDistributionPerClusterShouldBe([1 2 1 3], this);
         end
@@ -158,7 +158,7 @@ classdef StreamgenTest < matlab.unittest.TestCase
             givenMuIsSetTo([2, 2], this);
             givenSigmaIsSetTo([0.00002, 0.00002], this);
             givenStationaryIsSetTo(0, this);
-            whenStreamGenIsCalled(this);
+            whenMdcstreamIsCalled(this);
             thenPercentageOfSimultaneousStreamDataLabelsShouldBeZero(this);
             thenStreamDataLabelDistributionPerClusterShouldBe([1 2], this);            
         end
@@ -172,7 +172,7 @@ classdef StreamgenTest < matlab.unittest.TestCase
             givenSigmaIsSetTo([0.00002, 0.00002], this);
             givenStationaryIsSetTo(0, this);
             givenSimultaneousIsSetTo(0.3, this);
-            whenStreamGenIsCalled(this);
+            whenMdcstreamIsCalled(this);
             thenPercentageOfSimultaneousStreamDataLabelsShouldBe(0.3, this);
         end
         
@@ -185,7 +185,7 @@ classdef StreamgenTest < matlab.unittest.TestCase
             givenSigmaIsSetTo([0.2, 0.2 0.2], this);
             givenStationaryIsSetTo(0, this);
             givenStartTimeIsSetTo([5, 40, 33], this);
-            whenStreamGenIsCalled(this);
+            whenMdcstreamIsCalled(this);
             thenClusterStreamDataLabelStartTimeShouldBe([5, 40, 33], this);
         end
         
@@ -198,7 +198,7 @@ classdef StreamgenTest < matlab.unittest.TestCase
             givenSigmaIsSetTo([0.0002, 0.0002], this);
             givenStationaryIsSetTo(0, this);
             givenStartAfterClusterIsSetTo([0 1], this);         
-            whenStreamGenIsCalled(this);
+            whenMdcstreamIsCalled(this);
             thenClusterStreamDataLabelStartTimeShouldBe([0, 51], this);
         end
         
@@ -212,7 +212,7 @@ classdef StreamgenTest < matlab.unittest.TestCase
             givenSigmaIsSetTo(0.2 * ones(1, 20), this);
             givenStationaryIsSetTo(0, this);
             givenStartAfterClusterIsSetTo(0 : 19, this);         
-            whenStreamGenIsCalled(this);
+            whenMdcstreamIsCalled(this);
             thenClustersShouldBeInSequentialOrder(0 : 20, this);
         end
         
@@ -224,7 +224,7 @@ classdef StreamgenTest < matlab.unittest.TestCase
             givenNDatapointsIsSetTo(100, this);
             givenNTimeSamplesIsSetTo(250, this);
             givenRefillClustersIsSetTo(1, this);
-            whenStreamGenIsCalled(this);
+            whenMdcstreamIsCalled(this);
             thenNumberOfOutputDataPointsShouldBe(250, this);
         end
         
@@ -236,7 +236,7 @@ classdef StreamgenTest < matlab.unittest.TestCase
             givenNDatapointsIsSetTo(30, this);
             givenNTimeSamplesIsSetTo(75, this);
             givenRefillClustersIsSetTo([1 0 1], this);
-            whenStreamGenIsCalled(this);
+            whenMdcstreamIsCalled(this);
             thenNumberOfOutputDataPointsShouldBe(75 , this);
         end
     end
@@ -259,8 +259,8 @@ classdef StreamgenTest < matlab.unittest.TestCase
            this.config.nTimeSamples = n; 
         end
         
-        function givenStreamGenConfigurationWasCreated(this)
-            this.streamConfig = createStreamGenConfiguration(this.config, this.nClusters, this.outlierFlag); 
+        function givenMdcstreamConfigurationWasCreated(this)
+            this.streamConfig = createMdcstreamConfiguration(this.config, this.nClusters, this.outlierFlag); 
         end
              
         function givenStartTimeIsSetTo(st, this)
@@ -321,12 +321,12 @@ classdef StreamgenTest < matlab.unittest.TestCase
            this.config.sigma = sig; 
         end
         
-        function givenStreamGenIsCalled(this)
-            whenStreamGenIsCalled(this);
+        function givenMdcstreamIsCalled(this)
+            whenMdcstreamIsCalled(this);
         end
         
-        function whenStreamGenIsCalled(this)
-            this.result = streamgen(this.inputData, this.config);
+        function whenMdcstreamIsCalled(this)
+            this.result = mdcstream(this.inputData, this.config);
         end
         
         function thenOutputDatasetsAreEqual(this)

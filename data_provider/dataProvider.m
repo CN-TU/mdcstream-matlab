@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 % displayStream(data, dim1, dim2, speed)
 %
-% Description: This function provides example input data to test streamgen
+% Description: This function provides example input data to test mdcstream
 %   
 % Inputs:
 %   nDataPoints: number of datapoints

@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-% [data] = streamgen(data, config)
+% [data] = mdcstream(data, config)
 %
 % Description: generates synthetic stream data labels for datasets
 %   
@@ -40,7 +40,7 @@
 % Supervisor: Félix Iglesias Vázquez <felix.iglesias@nt.tuwien.ac.at>
 % Date: 01.04.2019
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-function [data] = streamgen(data, userConfig)
+function [data] = mdcstream(data, userConfig)
 
 if ~exist('userConfig')
     userConfig = [];
@@ -56,7 +56,7 @@ clusterLabels = unique(labelIn);
 outlierFlag = size(clusterLabels(clusterLabels==0),1);
 nClusters = size(clusterLabels, 1);
 
-config = createStreamGenConfiguration(userConfig, nClusters, outlierFlag);
+config = createMdcstreamConfiguration(userConfig, nClusters, outlierFlag);
 
 %%% extract configuration
 tbsDistribution   = config.tbsDistribution;

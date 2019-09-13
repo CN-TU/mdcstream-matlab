@@ -1,9 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-% [config] = createStreamGenConfiguration( configIn, nClusters, outlierFlag )
+% [config] = createMdcstreamConfiguration( configIn, nClusters, outlierFlag )
 %
 % Description: 
 %   The function takes the user config as input, initializes all values and
-%   creates a streamgen configuration
+%   creates a Mdcstream configuration
 %
 % Inputs:
 %   configIn.
@@ -30,7 +30,7 @@
 %       vectorChangeRate:  percentage of datapoints after which the
 %                          direction of the displacement changes
 %       nClusters:         the number of clusters
-%       outlierFlag:       whether the input dataset for streamgen contains
+%       outlierFlag:       whether the input dataset for Mdcstream contains
 %                          any outliers. 
 %
 % Outputs:
@@ -43,7 +43,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 
-function [config] = createStreamGenConfiguration( configIn, nClusters, outlierFlag )
+function [config] = createMdcstreamConfiguration( configIn, nClusters, outlierFlag )
     
 loadDefaultStreamConstants;
 
@@ -133,26 +133,26 @@ if configIn.stationary == 0
 else
     tbsLength = size(configIn.tbsDistribution, 2);
     if tbsLength ~= 1
-       error('createStreamGenConfiguration:ConfigurationError', "Length of tbs distribution = %d has to be 1 in stationary case", tbsLength); 
+       error('createMdcstreamConfiguration:ConfigurationError', "Length of tbs distribution = %d has to be 1 in stationary case", tbsLength); 
     end
     tbsDistribution = configIn.tbsDistribution;
     
     muLength = size(configIn.mu, 2);
     if muLength ~= 1
-       error('createStreamGenConfiguration:ConfigurationError', "Length of mu = %d has to be 1 in stationary case", muLength); 
+       error('createMdcstreamConfiguration:ConfigurationError', "Length of mu = %d has to be 1 in stationary case", muLength); 
     end
     mu = configIn.mu;
     
     sigmaLength = size(configIn.sigma, 2);
     if sigmaLength ~= 1
-       error('createStreamGenConfiguration:ConfigurationError', "Length of sigma = %d has to be 1 in stationary case", sigmaLength); 
+       error('createMdcstreamConfiguration:ConfigurationError', "Length of sigma = %d has to be 1 in stationary case", sigmaLength); 
     end
     sigma = configIn.sigma;
 end
 
 
 if configIn.simultaneous < 0 || configIn.simultaneous >= 1 
-    error('createStreamGenConfiguration:ConfigurationError', "Simultaneous = %d has to be in a range of [0, 1[ ",  configIn.simultaneous); 
+    error('createMdcstreamConfiguration:ConfigurationError', "Simultaneous = %d has to be in a range of [0, 1[ ",  configIn.simultaneous); 
 end
 
 
