@@ -14,7 +14,5 @@ Open MATLAB. From the [mdcstream-matlab] folder run:
 
 ## Dependencies
 In order to fully experience the benefits from mdcstream it is recommended to use MDCGen as an underlying static data set generator.
-MDCGen can be downloaded using the following link:
-	
-https://github.com/CN-TU/mdcgen-matlab
+MDCGen can be downloaded using the following link: https://github.com/CN-TU/mdcgen-matlab
 
