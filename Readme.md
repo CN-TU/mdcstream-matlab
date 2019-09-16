@@ -9,7 +9,7 @@ detection algorithms (MATLAB version)
 Open MATLAB. From the [mdcstream-matlab] folder run:
 > mdcstream_help 
 
-or, for a quick example, run:
+or, for a quick example using MDCGen as data generator, run:
 > mdcstream_example 
 
 ## References 
