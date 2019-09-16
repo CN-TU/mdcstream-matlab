@@ -1,6 +1,6 @@
 # mdcstream-matlab
 Generator of synthetic n-dimensional stream datasets for the evaluation of stream clustering and outlier
-detection algorithms (MATLAB version)
+detection algorithms (MATLAB R2016 or higher)
 
 - Author: Denis Ojdanic, denis.ojdanic@yahoo.com
 - Supervisor: Félix Iglesias Vázquez, felix.iglesias@tuwien.ac.at
