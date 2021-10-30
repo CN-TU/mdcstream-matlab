@@ -13,8 +13,9 @@ or, for a quick example using MDCGen as data generator, run:
 > mdcstream_example 
 
 ## References 
--> add link to paper and maybe master thesis
+Félix Iglesias, Denis Ojdanic, Alexander Hartl, and Tanja Zseby. 2020. MDCStream: Stream Data Generator for Testing Analysis Algorithms. In Proceedings of the 13th EAI International Conference on Performance Evaluation Methodologies and Tools (VALUETOOLS '20). Association for Computing Machinery, New York, NY, USA, 56–63. DOI:https://doi.org/10.1145/3388831.3388832
 
+  
 ## Dependencies
 In order to fully experience the benefits from mdcstream it is recommended to use MDCGen as an underlying static data set generator.
 MDCGen can be downloaded using the following link: https://github.com/CN-TU/mdcgen-matlab
